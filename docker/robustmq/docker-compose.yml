@@ -20,7 +20,7 @@ services:
   # ==============================================================================
   robustmq:
     build:
-      context: ..
+      context: ../..
       target: all-in-one
       dockerfile_inline: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
@@ -256,7 +256,7 @@ services:
   # Meta Service (meta service)
   meta-service:
     build:
-      context: ..
+      context: ../..
       target: meta-service
       dockerfile_inline: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
@@ -474,7 +474,7 @@ services:
   # MQTT Broker
   mqtt-broker:
     build:
-      context: ..
+      context: ../..
       target: mqtt-broker
       dockerfile_inline: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
@@ -697,7 +697,7 @@ services:
   # Journal Service
   journal-service:
     build:
-      context: ..
+      context: ../..
       target: journal-service
       dockerfile_inline: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
