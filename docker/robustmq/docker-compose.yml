@@ -29,10 +29,10 @@ services:
       - "1885:1885"    # MQTT SSL
       - "8083:8083"    # MQTT WebSocket
       - "8085:8085"    # MQTT WebSocket SSL
-      - "9092:9092"    # Kafka
+      - "9892:9092"    # Kafka
       - "1228:1228"    # gRPC
       - "5672:5672"    # AMQP
-      - "8080:8080"    # Admin
+      - "8680:8080"    # Admin
     volumes:
       - robustmq_data:/robustmq/data
       - robustmq_logs:/robustmq/logs
@@ -86,7 +86,7 @@ services:
       - "1885:1885"
       - "8083:8083"
       - "8085:8085"
-      - "8080:8080"
+      - "8680:8080"
     volumes:
       - mqtt_data:/robustmq/data
       - mqtt_logs:/robustmq/logs
@@ -148,7 +148,7 @@ services:
     image: grafana/grafana:latest
     container_name: robustmq-grafana
     ports:
-      - "3000:3000"
+      - "3080:3000"
     volumes:
       - grafana_data:/var/lib/grafana
       - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
