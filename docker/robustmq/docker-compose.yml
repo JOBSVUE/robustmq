@@ -38,7 +38,7 @@ services:
       - robustmq_logs:/robustmq/logs
       - ./config:/robustmq/config:ro
       - 
-        type: binding
+        type: bind
         source: ./Dockerfile
         target: docker/Dockerfile
         content: |
@@ -273,7 +273,7 @@ services:
       - meta_logs:/robustmq/logs
       - ./config:/robustmq/config:ro
       - 
-        type: binding
+        type: bind
         source: ./Dockerfile
         target: docker/Dockerfile
         content: |
@@ -499,7 +499,7 @@ services:
       - mqtt_logs:/robustmq/logs
       - ./config:/robustmq/config:ro
       - 
-        type: binding
+        type: bind
         source: ./Dockerfile
         target: docker/Dockerfile
         content: |
@@ -723,7 +723,7 @@ services:
       - journal_logs:/robustmq/logs
       - ./config:/robustmq/config:ro
       - 
-        type: binding
+        type: bind
         source: ./Dockerfile
         target: docker/Dockerfile
         content: |
