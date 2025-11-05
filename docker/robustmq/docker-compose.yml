@@ -21,7 +21,7 @@ services:
   robustmq:
     build:
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: ./Dockerfile
       target: all-in-one
     container_name: robustmq
     ports:
@@ -37,6 +37,12 @@ services:
       - robustmq_data:/robustmq/data
       - robustmq_logs:/robustmq/logs
       - ./config:/robustmq/config:ro
+      - type: binding
+        source: ./Dockerfile
+        target: ./Dockerfile
+        content: |
+          
+
     environment:
       - ROBUSTMQ_ROLES=meta,broker,journal
       - ROBUSTMQ_CONFIG_PATH=/robustmq/config/server.toml
