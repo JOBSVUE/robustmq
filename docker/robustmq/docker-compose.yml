@@ -21,7 +21,7 @@ services:
   robustmq:
     build:
       context: ..
-      dockerfile: ./docker/robustmq/Dockerfile
+      dockerfile: docker/Dockerfile
       target: all-in-one
     container_name: robustmq
     ports:
@@ -40,7 +40,7 @@ services:
       - 
         type: binding
         source: ./Dockerfile
-        target: ./docker/robustmq/Dockerfile
+        target: docker/Dockerfile
         content: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
           
@@ -263,7 +263,7 @@ services:
   meta-service:
     build:
       context: ..
-      dockerfile: ./docker/robustmq/Dockerfile
+      dockerfile: docker/Dockerfile
       target: meta-service
     container_name: robustmq-meta
     ports:
@@ -275,7 +275,7 @@ services:
       - 
         type: binding
         source: ./Dockerfile
-        target: ./docker/robustmq/Dockerfile
+        target: docker/Dockerfile
         content: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
           
@@ -485,7 +485,7 @@ services:
   mqtt-broker:
     build:
       context: ..
-      dockerfile: ./docker/robustmq/Dockerfile
+      dockerfile: docker/Dockerfile
       target: mqtt-broker
     container_name: robustmq-mqtt
     ports:
@@ -501,7 +501,7 @@ services:
       - 
         type: binding
         source: ./Dockerfile
-        target: ./docker/robustmq/Dockerfile
+        target: docker/Dockerfile
         content: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
           
@@ -713,7 +713,7 @@ services:
   journal-service:
     build:
       context: ..
-      dockerfile: ./docker/robustmq/Dockerfile
+      dockerfile: docker/Dockerfile
       target: journal-service
     container_name: robustmq-journal
     ports:
@@ -725,7 +725,7 @@ services:
       - 
         type: binding
         source: ./Dockerfile
-        target: ./docker/robustmq/Dockerfile
+        target: docker/Dockerfile
         content: |
           FROM lukemathwalker/cargo-chef:latest-rust-1.90.0 AS planner
           
